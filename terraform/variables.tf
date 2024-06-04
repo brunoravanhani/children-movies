@@ -12,5 +12,4 @@ variable "content_path" {
 variable "zone_id" {
   description = "Zone Route53 Id"
   type        = string
-  default     = {}
 }
