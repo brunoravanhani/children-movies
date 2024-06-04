@@ -1,13 +1,11 @@
 variable "domain_name" {
   description = "domain name from cerificate"
   type        = string
-  default     = {}
 }
 
 variable "zone_id" {
   description = "Zone Route53 Id"
   type        = string
-  default     = {}
 }
 
 variable "tags" {
