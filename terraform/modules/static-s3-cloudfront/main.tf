@@ -35,7 +35,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   aliases = [ var.alias_name ]
   enabled             = true
   is_ipv6_enabled     = true
-  comment             = "Distribution My Movies"
+  comment             = "Distribution Children Movies"
   default_root_object = "index.html"
 
   restrictions {
