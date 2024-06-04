@@ -8,3 +8,9 @@ variable "content_path" {
   description = "Path of the content site"
   type        = string
 }
+
+variable "zone_id" {
+  description = "Zone Route53 Id"
+  type        = string
+  default     = {}
+}

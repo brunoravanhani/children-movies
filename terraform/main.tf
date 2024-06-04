@@ -2,11 +2,15 @@ provider "aws" {
   region = "us-east-1"
 }
 
+locals {
+  domain_name = "children.ravanhani.com"
+}
+
 module "create_certificate" {
   source = "./modules/create-certificate"
 
-  domain_name = "children.ravanhani.com"
-  zone_id = "Z09807341PC7B6V9I5HGC"
+  domain_name = local.domain_name
+  zone_id = var.zone_id
 
   tags = {
     Terraform   = "true"
@@ -21,7 +25,7 @@ module "website_s3_bucket" {
   bucket_name = "children-movies"
   region = "us-east-1"
   oac_name = "children-movies-oac"
-  alias_name = "children.ravanhani.com"
+  alias_name = local.domain_name
   acm_certificate_arn = module.create_certificate.certificate_arn
   tags = {
     Terraform   = "true"
