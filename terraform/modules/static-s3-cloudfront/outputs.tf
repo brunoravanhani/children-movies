@@ -15,11 +15,11 @@ output "distribution_arn" {
 
 output "distribution_name" {
   description = "name of distribution"
-  value       = aws_cloudfront_distribution.s3_distribution.name
+  value       = aws_cloudfront_distribution.s3_distribution.domain_name
 }
 
 output "distribution_zone_id" {
   description = "Zone id of distribution"
-  value       = aws_cloudfront_distribution.s3_distribution.zone_id
+  value       = aws_cloudfront_distribution.s3_distribution.hosted_zone_id
 }
 
