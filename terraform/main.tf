@@ -42,3 +42,27 @@ module "website_s3_bucket_upload" {
   bucket_name = "children-movies"
   path = var.content_path
 }
+
+resource "aws_route53_record" "A_dist_record" {
+  zone_id = var.zone_id
+  name    = local.domain_name
+  type    = "A"
+
+  alias {
+    name                   = module.website_s3_bucket.distribution_name
+    zone_id                = module.website_s3_bucket.distribution_zone_id
+    evaluate_target_health = true
+  }
+}
+
+resource "aws_route53_record" "AAAA_dist_record" {
+  zone_id = var.zone_id
+  name    = local.domain_name
+  type    = "AAAA"
+
+  alias {
+    name                   = module.website_s3_bucket.distribution_name
+    zone_id                = module.website_s3_bucket.distribution_zone_id
+    evaluate_target_health = true
+  }
+}
