@@ -49,7 +49,7 @@ resource "aws_route53_record" "A_dist_record" {
   type    = "A"
 
   alias {
-    name                   = module.website_s3_bucket.distribution_name
+    name                   = local.domain_name
     zone_id                = module.website_s3_bucket.distribution_zone_id
     evaluate_target_health = true
   }
@@ -61,7 +61,7 @@ resource "aws_route53_record" "AAAA_dist_record" {
   type    = "AAAA"
 
   alias {
-    name                   = module.website_s3_bucket.distribution_name
+    name                   = local.domain_name
     zone_id                = module.website_s3_bucket.distribution_zone_id
     evaluate_target_health = true
   }
