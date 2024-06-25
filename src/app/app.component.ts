@@ -61,7 +61,7 @@ export class AppComponent {
       name: 'Carros: na estrada',
       image: 'https://media.themoviedb.org/t/p/w188_and_h282_bestv2/6QXirTPUQecr1BAEfgVSXPD1np0.jpg',
       description: '',
-      type: 'movie',
+      type: 'serie',
       streams: [
         {
           name: "Disney",
@@ -69,7 +69,59 @@ export class AppComponent {
         }
       ],
       tags: ['menino', 'menina']
-    }
+    },
+    {
+      name: 'Enrolados (Rapunzel)',
+      image: 'https://media.themoviedb.org/t/p/w188_and_h282_bestv2/wZzVkdnc0kw20lSJc13ZmgTPah3.jpg',
+      description: '',
+      type: 'movie',
+      streams: [
+        {
+          name: "Disney",
+          link: 'https://www.disneyplus.com/pt-br/movies/tangled/3V3ALy4SHStq?irclickid=2GtT7S2yFxyKRS%3AxiLxHKTcjUkC0zHSrRwHOQs0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=0b010026-00d7-4393-b800-20e3667ad1f8&dclid=CjgKEAjw1emzBhDBt_XU8IDS7Q0SJADR5XhZkAEBBmP3LT-QzTf2vIFOWADEAy28UhGwGdQCUsPfIPD_BwE'
+        }
+      ],
+      tags: ['menina']
+    },
+    {
+      name: 'Moana',
+      image: 'https://media.themoviedb.org/t/p/w188_and_h282_bestv2/4rxEeTzN1oZPJo1GBoPOnA3NeJv.jpg',
+      description: '',
+      type: 'movie',
+      streams: [
+        {
+          name: "Disney",
+          link: 'https://www.disneyplus.com/pt-br/movies/moana/70GoJHflgHH9?irclickid=2GtT7S2yFxyKRS%3AxiLxHKTcjUkC0zHQ7RwHOQs0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=0701003b-3ddf-4bd9-b800-2275667ad1ce&dclid=CjgKEAjw1emzBhDBt_XU8IDS7Q0SJADR5XhZCLu2TuiJs9vsIUqFGjpIulJOIH-c1yDPWZB3_8EEpvD_BwE'
+        }
+      ],
+      tags: ['menina']
+    },
+    {
+      name: 'Valente',
+      image: 'https://media.themoviedb.org/t/p/w188_and_h282_bestv2/jX9O3eyzfw937QOhRF4wz6nhxBM.jpg',
+      description: '',
+      type: 'movie',
+      streams: [
+        {
+          name: "Disney",
+          link: 'https://www.disneyplus.com/pt-br/movies/brave/ovUp92sPbaSW?irclickid=2GtT7S2yFxyKRS%3AxiLxHKTcjUkC0zHyDRwHOQs0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=08010012-3074-4258-bb00-0dc3667ad176&dclid=CjgKEAjw1emzBhDBt_XU8IDS7Q0SJADR5XhZKveWJITBpQ45yD0GBH85r_ZdHWjWmoj3m_uwog7cAPD_BwE'
+        }
+      ],
+      tags: ['menina']
+    },
+    {
+      name: 'As Crônicas de Narnia',
+      image: 'https://media.themoviedb.org/t/p/w188_and_h282_bestv2/sLw1gxPAvkqhp5XrdO2A50Q5lTW.jpg',
+      description: '',
+      type: 'movie',
+      streams: [
+        {
+          name: "Disney",
+          link: 'https://www.disneyplus.com/pt-br/movies/chronicles-of-narnia-the-lion-the-witch-and-the-wardrobe/4rcSmuEmfIvs?irclickid=2GtT7S2yFxyKRS%3AxiLxHKTcjUkC0zHzTRwHOQs0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=0901003b-ee89-4cf7-ba00-05e4667ad132&dclid=CjgKEAjw1emzBhDBt_XU8IDS7Q0SJADR5XhZ0POJ642wZzuEYKixUGB70MZPTT5pV-h8goTsB9P1ffD_BwE'
+        }
+      ],
+      tags: ['menino', 'menina']
+    },
   ]
 }
 

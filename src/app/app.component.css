@@ -23,3 +23,10 @@
 .card-title-box {
   width: 100%;
 }
+
+@media screen and (max-width: 768px) {
+  .movie-card {
+    width: 100%;
+    max-width: 500px;
+  }
+}
