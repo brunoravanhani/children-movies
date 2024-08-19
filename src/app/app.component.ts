@@ -136,6 +136,17 @@ export class AppComponent {
             "tags": ["menino"]
           },
           {
+            "name": "Como Treinar o Seu Dragão 2",
+            "image": "https://image.tmdb.org/t/p/w1280/3scupRmZJ3zrDS29XeUQKm8nu3U.jpg",
+            "description": "",
+            "type": "movie",
+            "streams": [{
+              "name": "Prime Video",
+              "link": "https://www.primevideo.com/detail/0RZDRRAVQ2XV5W4I3T6Z22RAC0/ref=atv_dl_rdr?tag=justbrrsjd-20"
+            }],
+            "tags": ["menino"]
+          },
+          {
             "name": "Toy Story: Um Mundo de Aventuras",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/6AafgfifXkFS4g2xGJZIwsPQK6P.jpg",
             "description": "",
@@ -352,6 +363,123 @@ export class AppComponent {
               {
                 "name": "Disney",
                 "link": "https://www.disneyplus.com/pt-br/movies/finding-dory/2L6w30vnqebX?irclickid=2GtT7S2yFxyKRS%3AxiLxHKTcjUkC0X2WDRwHM3A0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=0e010000-0ef6-4c90-a000-16b2667d75a7&dclid=CJv1geT9-4YDFR5V3QIdKZEHyA"
+              }
+            ],
+            "tags": ["menino", "menina"]
+          },
+          {
+            "name": "Klaus",
+            "image": "https://media.themoviedb.org/t/p/original/guyZW9AQdTMp2F4esttjyIMMK1k.jpg",
+            "description": "",
+            "type": "movie",
+            "streams": [
+              {
+                "name": "Netflix",
+                "link": "https://www.netflix.com/br/title/80183187"
+              }
+            ],
+            "tags": ["menino", "menina"]
+          },
+          {
+            "name": "Irmão Urso",
+            "image": "https://image.tmdb.org/t/p/w1280/pFRQgHiZwHTX7LmHEI0hwocuBC3.jpg",
+            "description": "",
+            "type": "movie",
+            "streams": [
+              {
+                "name": "Disney",
+                "link": "https://www.disneyplus.com/pt-br/movies/brother-bear/2asiYJlL0GMa?irclickid=2GtT7S2yFxyKRS%3AxiLxHKTcjUkCwvF0bRwHJQE0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=0c01004b-4e42-43b6-9500-154866c3900c&dclid=CjkKEQjw2ou2BhC70qD70d6lzaIBEiQAlVkkqhfs1OFfmGY6fQlmzGqw2OQIm4o7lmFwVddNAnMH6C_w_wcB"
+              }
+            ],
+            "tags": ["menino", "menina"]
+          },
+          {
+            "name": "Irmão Urso 2",
+            "image": "https://image.tmdb.org/t/p/w1280/r4kOIrwYMXInmFH8eaJ6kDoAkUW.jpg",
+            "description": "",
+            "type": "movie",
+            "streams": [
+              {
+                "name": "Disney",
+                "link": "https://www.disneyplus.com/pt-br/movies/brother-bear-2/3aRi2Elfcl2U?irclickid=2GtT7S2yFxyKRS%3AxiLxHKTcjUkCwvF1jRwHJQE0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=0a010010-389b-46a8-9500-13e266c39054&dclid=CjkKEQjw2ou2BhC70qD70d6lzaIBEiQAlVkkqkozgn5FInirLul8Tt9XnUQoSRYxtOa-B5Mu3xpX7Efw_wcB"
+              }
+            ],
+            "tags": ["menino", "menina"]
+          },
+          {
+            "name": "Spirit: O Corcel Indomável",
+            "image": "https://image.tmdb.org/t/p/w1280/qJ8fF5Uoy9WLrUvCXU26VJrfa5r.jpg",
+            "description": "",
+            "type": "movie",
+            "streams": [
+              {
+                "name": "Netfix",
+                "link": "https://www.netflix.com/br/title/60020810"
+              }
+            ],
+            "tags": ["menino"]
+          },
+          {
+            "name": "A Guarda do Leão",
+            "image": "https://image.tmdb.org/t/p/w1280/7hab4OnSLtgULjai9pHMQoo6Yap.jpg",
+            "description": "",
+            "type": "serie",
+            "streams": [
+              {
+                "name": "Disney",
+                "link": "https://www.disneyplus.com/pt-br/series/the-lion-guard/3sJT6PU2gT88?irclickid=2GtT7S2yFxyKRS%3AxiLxHKTcjUkCwvHz7RwHJQE0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=0601002a-8ba5-411a-a200-0cea66c3913e&dclid=CjkKEQjw2ou2BhC70qD70d6lzaIBEiQAlVkkqi2b8TjAlPOTo5mP-ph6a1muy2t9YTE5T04hnPg53_rw_wcB"
+              }
+            ],
+            "tags": ["menino", "menina"]
+          },
+          // {
+          //   "name": "Pokémon",
+          //   "image": "https://image.tmdb.org/t/p/w1280/ck1nfqYxMkiGvBVztIuM6b7fHoC.jpg",
+          //   "description": "Assitir antes para ver se é a serie clássica",
+          //   "type": "serie",
+          //   "streams": [
+          //     {
+          //       "name": "Netflix",
+          //       "link": "https://www.netflix.com/br/title/81706101"
+          //     }
+          //   ],
+          //   "tags": ["menino",]
+          // },
+          {
+            "name": "O Rei Leão",
+            "image": "https://image.tmdb.org/t/p/w1280/8aIvm8OaJISOpVTt7rMIh7X35G5.jpg",
+            "description": "",
+            "type": "movie",
+            "streams": [
+              {
+                "name": "Disney",
+                "link": "https://www.disneyplus.com/pt-br/movies/the-lion-king/1HqwiEcje6Nj?irclickid=2GtT7S2yFxyKRS%3AxiLxHKTcjUkCwvsxyRwHJQE0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=0f010002-2474-4943-b500-120d66c39311&dclid=CjkKEQjw2ou2BhC70qD70d6lzaIBEiQAlVkkqoQuNBJ1exB6aoms7p4HjIprK_dOeYnZ2WurFXPovrvw_wcB"
+              }
+            ],
+            "tags": ["menino", "menina"]
+          },
+          {
+            "name": "Rei Leão II: O Reino de Simba",
+            "image": "https://image.tmdb.org/t/p/w1280/9GB2FntD6nBGx1EsKKOtR7v4Tza.jpg",
+            "description": "",
+            "type": "movie",
+            "streams": [
+              {
+                "name": "Disney",
+                "link": "https://www.disneyplus.com/pt-br/movies/the-lion-king-2-simbas-pride/7EMejJ1F00Pn?irclickid=2GtT7S2yFxyKRS%3AxiLxHKTcjUkCwvs1qRwHJQE0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=0c01002b-4b48-4855-a500-0fcf66c3935a&dclid=CjkKEQjw2ou2BhC70qD70d6lzaIBEiQAlVkkqsD8neauAjjXwpwaI50qK3BNaM2jB_U5OslNKlqsY4fw_wcB"
+              }
+            ],
+            "tags": ["menino", "menina"]
+          },
+          {
+            "name": "O Rei Leão",
+            "image": "https://image.tmdb.org/t/p/w1280/wrHr8eEJYDAA7WYybyH162s4oZ4.jpg",
+            "description": "",
+            "type": "movie",
+            "streams": [
+              {
+                "name": "Disney",
+                "link": "https://www.disneyplus.com/pt-br/movies/the-lion-king/gDBvSe4GpZPD?irclickid=2GtT7S2yFxyKRS%3AxiLxHKTcjUkCwvsWTRwHJQE0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=05010011-50e3-4398-b100-015e66c393a2&dclid=CjkKEQjw2ou2BhC70qD70d6lzaIBEiQAlVkkqkAegqiHzQDB6wg8OC-SdpFGZL61oRyzz40_Jrx1SVDw_wcB"
               }
             ],
             "tags": ["menino", "menina"]
