@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatCardModule, MatButtonModule,  MatIconModule],
+  imports: [RouterOutlet, MatCardModule, MatButtonModule,  MatIconModule, MatGridListModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -20,6 +21,7 @@ export class AppComponent {
       {
         "data": [
           {
+            "id": 1,
             "name": "O Expresso Polar",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/eOoCzH0MqeGr2taUZO4SwG416PF.jpg",
             "description": "",
@@ -37,6 +39,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 2,
             "name": "Pets 2",
             "image": "https://i.ytimg.com/vi_webp/d98nho-OgfI/movieposter.webp",
             "description": "",
@@ -50,6 +53,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 3,
             "name": "O Bom Dinossauro",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/8RSkxOO80btfKjyiC5ZiTaCHIT8.jpg",
             "description": "",
@@ -63,6 +67,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 4,
             "name": "Carros: na estrada",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/6QXirTPUQecr1BAEfgVSXPD1np0.jpg",
             "description": "",
@@ -76,6 +81,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 5,
             "name": "Enrolados (Rapunzel)",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/wZzVkdnc0kw20lSJc13ZmgTPah3.jpg",
             "description": "",
@@ -89,6 +95,7 @@ export class AppComponent {
             "tags": ["menina"]
           },
           {
+            "id": 6,
             "name": "Moana",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/4rxEeTzN1oZPJo1GBoPOnA3NeJv.jpg",
             "description": "",
@@ -102,6 +109,7 @@ export class AppComponent {
             "tags": ["menina"]
           },
           {
+            "id": 7,
             "name": "Valente",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/jX9O3eyzfw937QOhRF4wz6nhxBM.jpg",
             "description": "",
@@ -115,6 +123,7 @@ export class AppComponent {
             "tags": ["menina"]
           },
           {
+            "id": 8,
             "name": "As Crônicas de Narnia",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/sLw1gxPAvkqhp5XrdO2A50Q5lTW.jpg",
             "description": "",
@@ -128,6 +137,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 9,
             "name": "Como Treinar o Seu Dragão",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/unDtQ5SwuXJLJW6WB3F9yaSfIbl.jpg",
             "description": "",
@@ -147,6 +157,7 @@ export class AppComponent {
             "tags": ["menino"]
           },
           {
+            "id": 10,
             "name": "Toy Story: Um Mundo de Aventuras",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/6AafgfifXkFS4g2xGJZIwsPQK6P.jpg",
             "description": "",
@@ -160,6 +171,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 11,
             "name": "Toy Story 2",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/yjzb9ojVSEw9vg5kp22ijPKXyMF.jpg",
             "description": "",
@@ -173,6 +185,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 12,
             "name": "Toy Story 3",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/AbbXspMOwdvwWZgVN0nabZq03Ec.jpg",
             "description": "",
@@ -186,6 +199,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 13,
             "name": "Toy Story 4",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/csiyO6q8rR74pfgJDjwINzhoick.jpg",
             "description": "",
@@ -199,6 +213,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 14,
             "name": "Raya e o Último Dragão",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/yXrb84zJidCefyhTWHwo4yCDvwz.jpg",
             "description": "",
@@ -212,6 +227,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 15,
             "name": "Zootopia",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/wtlvxzM7FUGZTSDX4SBGaJ8gBJZ.jpg",
             "description": "",
@@ -225,6 +241,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 16,
             "name": "101 Dálmatas",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/117iq8a3s1umK391ZribC7JqNTt.jpg",
             "description": "",
@@ -238,6 +255,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 17,
             "name": "Frozen: Uma Aventura Congelante",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/hOZKUJGN0m717LRSQDxhgABqWrf.jpg",
             "description": "",
@@ -251,6 +269,7 @@ export class AppComponent {
             "tags": ["menina"]
           },
           {
+            "id": 18,
             "name": "Frozen 2",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/uVHishB6G4T6BOnUsV4JgdJXdIz.jpg",
             "description": "",
@@ -264,6 +283,7 @@ export class AppComponent {
             "tags": ["menina"]
           },
           {
+            "id": 19,
             "name": "Cinderela",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/4DsfRsCxrhkHQHGLeY9m8oi9q46.jpg",
             "description": "",
@@ -277,6 +297,7 @@ export class AppComponent {
             "tags": ["menina"]
           },
           {
+            "id": 20,
             "name": "Cinderela",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/Acj5mmoZQ5lKLNpU2y0XQCt5rNb.jpg",
             "description": "",
@@ -290,6 +311,7 @@ export class AppComponent {
             "tags": ["menina"]
           },
           {
+            "id": 21,
             "name": "A Bela e a Fera",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/is4c02QuP70BCVLp27SSlDeByoe.jpg",
             "description": "",
@@ -303,6 +325,7 @@ export class AppComponent {
             "tags": ["menina"]
           },
           {
+            "id": 22,
             "name": "A Bela e a Fera",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/9V4wl4rnUcLfGuTe4J5NjOFbDil.jpg",
             "description": "",
@@ -316,6 +339,7 @@ export class AppComponent {
             "tags": ["menina"]
           },
           {
+            "id": 23,
             "name": "A Bela Adormecida",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/iRYRBWKhwPI5lBT4DPhmNpmBOMU.jpg",
             "description": "",
@@ -329,6 +353,7 @@ export class AppComponent {
             "tags": ["menina"]
           },
           {
+            "id": 24,
             "name": "Ratatouille",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/lpyqGZXjaPpr2dzkD9XD5DUGMkN.jpg",
             "description": "",
@@ -342,6 +367,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 25,
             "name": "Procurando Nemo",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/5jrPMq7IMLTqcuPDlK6jfruEbpq.jpg",
             "description": "",
@@ -355,6 +381,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 26,
             "name": "Procurando Dory",
             "image": "https://media.themoviedb.org/t/p/w188_and_h282_bestv2/5MOyKnmtE2hd778bIybw9v8HkiP.jpg",
             "description": "",
@@ -368,6 +395,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 27,
             "name": "Klaus",
             "image": "https://media.themoviedb.org/t/p/original/guyZW9AQdTMp2F4esttjyIMMK1k.jpg",
             "description": "",
@@ -381,6 +409,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 28,
             "name": "Irmão Urso",
             "image": "https://image.tmdb.org/t/p/w1280/pFRQgHiZwHTX7LmHEI0hwocuBC3.jpg",
             "description": "",
@@ -394,6 +423,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 29,
             "name": "Irmão Urso 2",
             "image": "https://image.tmdb.org/t/p/w1280/r4kOIrwYMXInmFH8eaJ6kDoAkUW.jpg",
             "description": "",
@@ -407,6 +437,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 30,
             "name": "Spirit: O Corcel Indomável",
             "image": "https://image.tmdb.org/t/p/w1280/qJ8fF5Uoy9WLrUvCXU26VJrfa5r.jpg",
             "description": "",
@@ -420,6 +451,7 @@ export class AppComponent {
             "tags": ["menino"]
           },
           {
+            "id": 31,
             "name": "A Guarda do Leão",
             "image": "https://image.tmdb.org/t/p/w1280/7hab4OnSLtgULjai9pHMQoo6Yap.jpg",
             "description": "",
@@ -433,6 +465,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           // {
+          //   "id": 32,
           //   "name": "Pokémon",
           //   "image": "https://image.tmdb.org/t/p/w1280/ck1nfqYxMkiGvBVztIuM6b7fHoC.jpg",
           //   "description": "Assitir antes para ver se é a serie clássica",
@@ -446,6 +479,7 @@ export class AppComponent {
           //   "tags": ["menino",]
           // },
           {
+            "id": 33,
             "name": "O Rei Leão",
             "image": "https://image.tmdb.org/t/p/w1280/8aIvm8OaJISOpVTt7rMIh7X35G5.jpg",
             "description": "",
@@ -459,6 +493,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 34,
             "name": "Rei Leão II: O Reino de Simba",
             "image": "https://image.tmdb.org/t/p/w1280/9GB2FntD6nBGx1EsKKOtR7v4Tza.jpg",
             "description": "",
@@ -472,6 +507,7 @@ export class AppComponent {
             "tags": ["menino", "menina"]
           },
           {
+            "id": 35,
             "name": "O Rei Leão",
             "image": "https://image.tmdb.org/t/p/w1280/wrHr8eEJYDAA7WYybyH162s4oZ4.jpg",
             "description": "",

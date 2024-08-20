@@ -7,28 +7,28 @@
   </header>
 
   <div class="content">
-    <div class="list-container">
-      @for (item of movies; track item.name) {
-        <mat-card class="movie-card" style="padding-bottom: 15px;">
+      @for (item of movies; track item.id) {
+        <mat-card class="movie-card" appearance="outlined">
+
+          <img mat-card-image class="card-image" [src]="item.image"  [alt]="item.name">
+          <mat-card-content>
+            <p>
+              {{item.description}}
+            </p>
+          </mat-card-content>
           <mat-card-header>
-            <mat-card-title-group style="justify-content: space-between;">
-              <div class="card-title-box">
-                <mat-card-title>{{item.name}}</mat-card-title>
-                <div class="card-streams-container">
-                  @for (stream of item.streams; track stream.name) {
-                    <a mat-button  [href]="stream.link" target="_blank">{{stream.name}}</a>
-                  }
-                </div>
-              </div>
-              <img class="card-image" [src]="item.image"  [alt]="item.name">
-            </mat-card-title-group>
+            <mat-card-title>{{item.name}}</mat-card-title>
           </mat-card-header>
+          <mat-card-actions>
+            @for (stream of item.streams; track stream.name) {
+              <a mat-button  [href]="stream.link" target="_blank">{{stream.name}}</a>
+            }
+          </mat-card-actions>
         </mat-card>
 
         } @empty {
         <div>There are no items.</div>
         }
-  </div>
   </div>
 </main>
 
