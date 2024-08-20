@@ -1,13 +1,31 @@
+body{
+  font-size: 14px;
+}
+
 .main-title {
-  font-size: 2.2em;
+  font-size: 2.2rem;
   text-align: center;
 }
 
 .content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 25px;
+  justify-content: center;
+  justify-items: center;
   padding: 20px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.form-content {
+  padding: 20px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.form-filter {
+  width: 100%;
 }
 
 .movie-card {
@@ -21,7 +39,33 @@
 .card-title-box {
 }
 
+.example-additional-selection {
+  opacity: 0.75;
+  font-size: 0.75em;
+}
+
+
 @media screen and (max-width: 768px) {
+
+  body{
+    font-size: 12px;
+  }
+
+  .content {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .form-content {
+    width: 100%;
+  }
+
   .movie-card {
+    max-width: 160px;
+  }
+
+  .card-image {
+    height: 240px;
   }
 }
