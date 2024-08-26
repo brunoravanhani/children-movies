@@ -4,7 +4,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatSelectModule} from '@angular/material/select';
+import {MatSelectModule, MatSelectChange} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
@@ -21,6 +21,30 @@ export class AppComponent {
   filters = new FormControl('');
 
   filtersList: string[] = ['Filme', 'Serie', 'Menino', 'Menina'];
+
+  onFilterChange(event: MatSelectChange) {
+    const selectedFilters = event.value.map((x: string) => x.toLocaleLowerCase());
+
+    if (!selectedFilters.length) {
+      this.movies = this.getData();
+      return;
+    }
+
+    const filtersType = selectedFilters.filter((x: string) => x == 'filme' || x == 'serie')
+    const filtersTag = selectedFilters.filter((x: string) => x == 'menino' || x == 'menina')
+
+    let moviesFiltered = this.getData();
+
+    if (filtersType.length) {
+      moviesFiltered = moviesFiltered.filter(x => filtersType.some((y: string) => y == x.type));
+    }
+
+    if (filtersTag.length) {
+      moviesFiltered = moviesFiltered.filter(x => x.tags.some((y: string) => filtersTag.includes(y)));
+    }
+
+    this.movies = moviesFiltered;
+  }
 
   getData () {
     var data =
