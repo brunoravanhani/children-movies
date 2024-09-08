@@ -18,9 +18,10 @@
             </span>
           }
         </mat-select-trigger>
-        @for (filter of filtersList; track filter) {
-          <mat-option [value]="filter">{{filter}}</mat-option>
-        }
+        <mat-option value="Filme">Filme</mat-option>
+        <mat-option value="Serie">Serie</mat-option>
+        <mat-option value="Menino">Menino</mat-option>
+        <mat-option value="Menina">Menina</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
