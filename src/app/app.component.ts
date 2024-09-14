@@ -4,13 +4,13 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatSelectModule, MatSelectChange} from '@angular/material/select';
-import {MatFormFieldModule} from '@angular/material/form-field';
+
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatCardModule, MatButtonModule,  MatIconModule, MatFormFieldModule, MatSelectModule, FormsModule, ReactiveFormsModule],
+  imports: [RouterOutlet, MatCardModule, MatButtonModule,  MatIconModule, MatCheckboxModule, FormsModule, ReactiveFormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -20,30 +20,17 @@ export class AppComponent {
 
   filters = new FormControl('');
 
-  filtersList: string[] = ['Filme', 'Serie', 'Menino', 'Menina'];
+  filterMovies: boolean = true;
+  filterSeries: boolean = true;
+  filterBoy: boolean = true;
+  filterGirl: boolean = true;
 
-  onFilterChange(event: MatSelectChange) {
-    const selectedFilters = event.value.map((x: string) => x.toLocaleLowerCase());
+  toggleFilter() {
 
-    if (!selectedFilters.length) {
-      this.movies = this.getData();
-      return;
-    }
-
-    const filtersType = selectedFilters.filter((x: string) => x == 'filme' || x == 'serie')
-    const filtersTag = selectedFilters.filter((x: string) => x == 'menino' || x == 'menina')
-
-    let moviesFiltered = this.getData();
-
-    if (filtersType.length) {
-      moviesFiltered = moviesFiltered.filter(x => filtersType.some((y: string) => y == x.type));
-    }
-
-    if (filtersTag.length) {
-      moviesFiltered = moviesFiltered.filter(x => x.tags.some((y: string) => filtersTag.includes(y)));
-    }
-
-    this.movies = moviesFiltered;
+    console.log('Movie: ' + this.filterMovies)
+    console.log('Series: ' + this.filterSeries)
+    console.log('Boy: ' + this.filterSeries)
+    console.log('Girl: ' + this.filterSeries)
   }
 
   getData () {
@@ -601,6 +588,90 @@ export class AppComponent {
               }
             ],
             "tags": ["menina"]
+          },
+          {
+            "id": 40,
+            "name": "Os Sem Floresta",
+            "image": "https://image.tmdb.org/t/p/w1280/cNPhs8Gkm1SJ4vuZDnytZnj1EsY.jpg",
+            "description": "",
+            "type": "filme",
+            "streams": [
+              {
+                "name": "Netflix",
+                "link": "https://www.netflix.com/br/title/70044882?s=i&trkid=14184244&vlang=pt"
+              }
+            ],
+            "tags": ["menina", "menino"]
+          },
+          {
+            "id": 41,
+            "name": "A Bailarina",
+            "image": "https://image.tmdb.org/t/p/w1280/xKPMlQ3v6KJD3u6ik3urzGesh5g.jpg",
+            "description": "",
+            "type": "filme",
+            "streams": [
+              {
+                "name": "Netflix",
+                "link": "https://www.netflix.com/br/title/80166318?s=i&trkid=14184244&vlang=pt"
+              }
+            ],
+            "tags": ["menina"]
+          },
+          {
+            "id": 42,
+            "name": "O Natal de Angela",
+            "image": "https://image.tmdb.org/t/p/w1280/iUUPFgIkYGb0okY1siub2wDg5Ly.jpg",
+            "description": "",
+            "type": "filme",
+            "streams": [
+              {
+                "name": "Netflix",
+                "link": "https://www.netflix.com/br/title/80230507?s=i&trkid=260839220&vlang=pt"
+              }
+            ],
+            "tags": ["menina"]
+          },
+          {
+            "id": 43,
+            "name": "O presente de natal de Angela",
+            "image": "https://image.tmdb.org/t/p/w1280/6TFKcVSIfIFDffi91XztloA6X7o.jpg",
+            "description": "",
+            "type": "filme",
+            "streams": [
+              {
+                "name": "Netflix",
+                "link": "https://www.netflix.com/br/title/81151926?s=i&trkid=200117422&vlang=pt"
+              }
+            ],
+            "tags": ["menina"]
+          },
+          {
+            "id": 44,
+            "name": "A Estrela de Belém",
+            "image": "https://image.tmdb.org/t/p/w1280/fqfmEDJpTa8qjwtNxCX6NYQs9Pr.jpg",
+            "description": "",
+            "type": "filme",
+            "streams": [
+              {
+                "name": "Netflix",
+                "link": "https://www.netflix.com/br/title/80121841?s=i&trkid=14184244&vlang=pt"
+              }
+            ],
+            "tags": ["menina", "menino"]
+          },
+          {
+            "id": 45,
+            "name": "Pedro Coelho 2: O Fugitivo",
+            "image": "https://image.tmdb.org/t/p/w1280/pxdSJCpqMOp3gakScrzHgGDEvVr.jpg",
+            "description": "",
+            "type": "filme",
+            "streams": [
+              {
+                "name": "Netflix",
+                "link": "https://www.netflix.com/br/title/81165117?s=i&trkid=200117422&vlang=pt"
+              }
+            ],
+            "tags": ["menina", "menino"]
           }
         ]
       }
