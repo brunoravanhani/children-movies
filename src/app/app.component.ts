@@ -27,10 +27,29 @@ export class AppComponent {
 
   toggleFilter() {
 
-    console.log('Movie: ' + this.filterMovies)
-    console.log('Series: ' + this.filterSeries)
-    console.log('Boy: ' + this.filterSeries)
-    console.log('Girl: ' + this.filterSeries)
+    let filteredMovies = this.getData();
+
+    if (!this.filterMovies) {
+      filteredMovies = filteredMovies.filter(x => x.type != 'filme')
+    }
+
+    if (!this.filterSeries) {
+      filteredMovies = filteredMovies.filter(x => x.type != 'serie')
+    }
+
+    const tags: string[] = [];
+
+    if (this.filterBoy) {
+      tags.push('menino');
+    }
+
+    if (this.filterGirl) {
+      tags.push('menina');
+    }
+
+    filteredMovies = filteredMovies.filter(x => x.tags.some((y: string) => tags.includes(y)));
+
+    this.movies = filteredMovies;
   }
 
   getData () {
@@ -669,6 +688,20 @@ export class AppComponent {
               {
                 "name": "Netflix",
                 "link": "https://www.netflix.com/br/title/81165117?s=i&trkid=200117422&vlang=pt"
+              }
+            ],
+            "tags": ["menina", "menino"]
+          },
+          {
+            "id": 46,
+            "name": "Baby Looney Tunes",
+            "image": "https://image.tmdb.org/t/p/w1280/e1ZxhAH73P3q7kIUr03qNymPW0K.jpg",
+            "description": "",
+            "type": "serie",
+            "streams": [
+              {
+                "name": "Max",
+                "link": "https://play.max.com/?utm_id=1100l5988&utm_source=gowatchit_gp&utm_medium=affiliate&clickref=1101lzF8XCTC"
               }
             ],
             "tags": ["menina", "menino"]
