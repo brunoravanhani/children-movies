@@ -4,13 +4,15 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatCardModule, MatButtonModule,  MatIconModule, MatCheckboxModule, FormsModule, ReactiveFormsModule],
+  imports: [RouterOutlet, MatCardModule, MatButtonModule,  MatIconModule, MatCheckboxModule, FormsModule, ReactiveFormsModule, MatInputModule, MatFormFieldModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -20,12 +22,33 @@ export class AppComponent {
 
   filters = new FormControl('');
 
+  search: string = "";
+
   filterMovies: boolean = true;
   filterSeries: boolean = true;
   filterBoy: boolean = true;
   filterGirl: boolean = true;
 
+  searchFilter() {
+
+    let filteredMovies = this.filter();
+
+    if (this.search != '') {
+      filteredMovies = filteredMovies.filter(x => x.name.includes(this.search));
+    }
+
+    this.movies = filteredMovies;
+
+  }
+
   toggleFilter() {
+
+    const filteredMovies = this.filter();
+
+    this.movies = filteredMovies;
+  }
+
+  filter() {
 
     let filteredMovies = this.getData();
 
@@ -49,7 +72,7 @@ export class AppComponent {
 
     filteredMovies = filteredMovies.filter(x => x.tags.some((y: string) => tags.includes(y)));
 
-    this.movies = filteredMovies;
+    return filteredMovies;
   }
 
   getData () {
@@ -705,6 +728,48 @@ export class AppComponent {
               }
             ],
             "tags": ["menina", "menino"]
+          },
+          {
+            "id": 47,
+            "name": "Carros",
+            "image": "https://image.tmdb.org/t/p/w1280/d3a9nafpB6rUWckVptwpTJ0Sy0l.jpg",
+            "description": "",
+            "type": "filme",
+            "streams": [
+              {
+                "name": "Disney",
+                "link": "https://www.disneyplus.com/pt-br/movies/cars/41KYquQjLwge?irclickid=2GtT7S2yFxyKRS%3AxiLxHKTcjUkCySuyaRwHjT00&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=09010046-0413-47c3-9d00-26dc66edd57d&dclid=CjgKEAjwurS3BhCLm92-yaPknWISJACzqbdwTt4FmDSD937u0aHDyaup8BHO3U-1J1h4qQWTGZxJx_D_BwE"
+              }
+            ],
+            "tags": ["menino"]
+          },
+          {
+            "id": 48,
+            "name": "Carros 2",
+            "image": "https://image.tmdb.org/t/p/w1280/fIKaabvE40T39nOIngcZPcPJeYe.jpg",
+            "description": "",
+            "type": "filme",
+            "streams": [
+              {
+                "name": "Disney",
+                "link": "https://www.disneyplus.com/pt-br/movies/cars-2/1Evb1neuySt0?irclickid=2GtT7S2yFxyKRS%3AxiLxHKTcjUkCySrxjRwHjT00&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=01010046-4d84-4747-9600-1f2766edd614&dclid=CjgKEAjwurS3BhCLm92-yaPknWISJACzqbdwTeaUFe88v_az061L-zO9UuVvrzJOXga8734gdZPnXvD_BwE"
+              }
+            ],
+            "tags": ["menino"]
+          },
+          {
+            "id": 49,
+            "name": "Carros 3",
+            "image": "https://image.tmdb.org/t/p/w1280/lVPFdORefTKXKFiSktrXbiFDNAK.jpg",
+            "description": "",
+            "type": "filme",
+            "streams": [
+              {
+                "name": "Disney",
+                "link": "https://www.disneyplus.com/pt-br/movies/cars-3/2uwOWguXyJe4?irclickid=2GtT7S2yFxyKRS%3AxiLxHKTcjUkCySr3zRwHjT00&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=0d010027-cf08-4526-b400-071966edd660&dclid=CjgKEAjwurS3BhCLm92-yaPknWISJACzqbdwwDXBZPqgbnBBJAQDHtMPiTedSarxlT3TN2bjM5yYefD_BwE"
+              }
+            ],
+            "tags": ["menino"]
           }
         ]
       }

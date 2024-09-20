@@ -7,7 +7,29 @@
   </header>
 
   <div class="form-content">
-    <h3>Filtar por:</h3>
+
+    <!-- <form > -->
+      <div class="form-container">
+        <mat-form-field class="search-bar">
+          <mat-label>Buscar Filme</mat-label>
+          <input matInput placeholder="Input" [(ngModel)]="search">
+          @if (search) {
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="search='';searchFilter()">
+              <mat-icon>close</mat-icon>
+            </button>
+          }
+
+        </mat-form-field>
+        <button mat-fab (click)="searchFilter()">
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+
+    <!-- </form> -->
+
+
+
+    <h5>Filtrar por:</h5>
     <section class="">
       <mat-checkbox class="" [(ngModel)]="filterMovies" (change)="toggleFilter()">Filmes</mat-checkbox>
       <mat-checkbox class="" [(ngModel)]="filterSeries" (change)="toggleFilter()">Series</mat-checkbox>
