@@ -770,11 +770,63 @@ export class AppComponent {
               }
             ],
             "tags": ["menino"]
+          },
+          {
+            "id": 50,
+            "name": "Os Incríveis",
+            "image": "https://image.tmdb.org/t/p/w1280/z8k5EhZZTLsCRF8NWjSe6snWNZg.jpg",
+            "description": "",
+            "type": "filme",
+            "streams": [
+              {
+                "name": "Disney",
+                "link": "https://www.disneyplus.com/pt-br/movies/the-incredibles/4jfOKErlmVcJ?irclickid=2GtT7S2yFxyKRS%3AxiLxHKTcjUkCWuuyzRwHJRQ0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=08010002-aa7a-4281-9000-21c767229570&dclid=CjkKEQjwsoe5BhDZtq7Dr4m69YwBEiQAV-5E7V-8aTxupqmTnahqLlcR_jXuwteCYhT3dWd6b8E1u0_w_wcB"
+              }
+            ],
+            "tags": ["menino"]
+          },
+          {
+            "id": 51,
+            "name": "Os Incríveis 2",
+            "image": "https://image.tmdb.org/t/p/w1280/y3EEb7o6NxK0pl0WsOswCos663y.jpg",
+            "description": "",
+            "type": "filme",
+            "streams": [
+              {
+                "name": "Disney",
+                "link": "https://www.disneyplus.com/pt-br/movies/incredibles-2/4Le2C4pyeB3J?irclickid=2GtT7S2yFxyKRS%3AxiLxHKTcjUkCWurwjRwHJRQ0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=04010020-af8a-4b45-8700-073667229645&dclid=CjkKEQjwsoe5BhDZtq7Dr4m69YwBEiQAV-5E7RkBSGMDpdISfwbxyn2XFfoe2DGQBMGjtCayXynbNnLw_wcB"
+              }
+            ],
+            "tags": ["menino"]
+          },
+          {
+            "id": 52,
+            "name": "A Princesa Encantada",
+            "image": "https://image.tmdb.org/t/p/w1280/eK08pDC4ASwgS5OohDmZcUbLrBx.jpg",
+            "description": "",
+            "type": "filme",
+            "streams": [
+              {
+                "name": "Netflix",
+                "link": "https://www.netflix.com/br/title/60034386"
+              }
+            ],
+            "tags": ["menina"]
           }
         ]
       }
 
-    return data.data;
+    return data.data.sort(this.sortByName);
+  }
+
+  sortByName(a: any, b: any) {
+    if (a.name < b.name) {
+      return -1; // a comes before b
+  }
+  if (a.name > b.name) {
+      return 1; // a comes after b
+  }
+  return 0; // a and b are equal
   }
 }
 
