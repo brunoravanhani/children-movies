@@ -826,6 +826,34 @@ export class AppComponent {
               }
             ],
             "tags": ["menino"]
+          },
+          {
+            "id": 54,
+            "name": "Kung Fu Panda",
+            "image": "https://image.tmdb.org/t/p/w1280/6figomnwyiUa2ErqK8QangIAO6c.jpg",
+            "description": "",
+            "type": "filme",
+            "streams": [
+              {
+                "name": "Netflix",
+                "link": "https://www.netflix.com/br/title/70075480"
+              }
+            ],
+            "tags": ["menino"]
+          },
+          {
+            "id": 55,
+            "name": "Kung Fu Panda 3",
+            "image": "https://image.tmdb.org/t/p/w1280/pXYJjUNtnLfXVKGmqi1nfGornri.jpg",
+            "description": "",
+            "type": "filme",
+            "streams": [
+              {
+                "name": "Netflix",
+                "link": "https://www.netflix.com/br/title/80071348"
+              }
+            ],
+            "tags": ["menino"]
           }
         ]
       }
