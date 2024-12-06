@@ -854,6 +854,20 @@ export class AppComponent {
               }
             ],
             "tags": ["menino"]
+          },
+          {
+            "id": 56,
+            "name": "As Crônicas de Nárnia: A Viagem do Peregrino da Alvorada",
+            "image": "https://image.tmdb.org/t/p/w1280/vcAYeNXMJoywxccPQLrESaBJane.jpg",
+            "description": "",
+            "type": "filme",
+            "streams": [
+              {
+                "name": "Disney",
+                "link": "https://www.disneyplus.com/pt-br/movies/the-chronicles-of-narnia-the-voyage-of-the-dawn-treader/EZQWzqJTK2Wd?irclickid=2GtT7S2yFxyKRS%3AxiLxHKTcjUkCVoizbRwHmxM0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=0e01001a-85e9-43d3-8a00-0ef367530a3c&dclid=CIXC87etk4oDFXZc3QId9pQbUw"
+              }
+            ],
+            "tags": ["menino", "menina"]
           }
         ]
       }
