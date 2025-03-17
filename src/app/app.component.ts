@@ -868,6 +868,34 @@ export class AppComponent {
               }
             ],
             "tags": ["menino", "menina"]
+          },
+          {
+            "id": 57,
+            "name": "Nanny McPhee: A Babá Encantada",
+            "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/eUMsZbnhquxIpr7lV5w78P2P7CH.jpg",
+            "description": "",
+            "type": "filme",
+            "streams": [
+              {
+                "name": "Netflix",
+                "link": "https://www.netflix.com/title/70040681"
+              }
+            ],
+            "tags": ["menino", "menina"]
+          },
+          {
+            "id": 58,
+            "name": "Nanny McPhee 2: E as Lições Mágicas",
+            "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/cS5VhYcpa74KcResDTrCsI5C4Ro.jpg",
+            "description": "",
+            "type": "filme",
+            "streams": [
+              {
+                "name": "Netflix",
+                "link": "https://www.netflix.com/title/70126488"
+              }
+            ],
+            "tags": ["menino", "menina"]
           }
         ]
       }
