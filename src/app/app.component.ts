@@ -24,15 +24,11 @@ import { environment } from './../environments/environment';
 export class AppComponent implements OnInit {
   title = 'children-movies';
   movies: any;
+  moviesBase: any;
 
   filters = new FormControl('');
 
   search: string = "";
-
-  filterMovies: boolean = true;
-  filterSeries: boolean = true;
-  filterBoy: boolean = true;
-  filterGirl: boolean = true;
 
   private apiUrl = environment.apiUrl;
 
@@ -41,21 +37,24 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.getData().subscribe({
       next: (response) => {
-        this.movies = response.data;
+        this.moviesBase = response.data;
+        this.movies = this.moviesBase.sort(this.sortByName);
       },
       error: (error) => console.error('Error fetching data:', error),
     })
   }
 
   searchFilter() {
-  }
 
-  toggleFilter() {
+    let filteredMovies = this.moviesBase.sort(this.sortByName);
 
+    if (this.search != '') {
+      filteredMovies = filteredMovies
+              .filter((x: { name: string }) => x.name.toUpperCase().includes(this.search.toUpperCase()));
+    }
 
-  }
+    this.movies = filteredMovies;
 
-  filter() {
 
   }
 
