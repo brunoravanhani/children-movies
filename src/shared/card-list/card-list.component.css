@@ -1,0 +1,29 @@
+.movie-card {
+  max-width: 188px;
+}
+
+.card-image {
+  height: 282px;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+  justify-content: center;
+  justify-items: center;
+  padding: 20px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+
+  .card-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 10px;
+    width: 100%;
+  }
+
+}

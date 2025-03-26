@@ -8,8 +8,76 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .main,
-.content {
+.content,
+.main > * {
   width: 100%;
 }
 
+.main > * {
+  display: block;
+}
+
+
+body, html {
+  font-size: 14px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  body, html {
+    font-size: 12px;
+  }
+
+}
+
+.main-title {
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.content {
+  padding: 20px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.form-content {
+  padding: 20px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.form-filter {
+  width: 100%;
+}
+
+
+.search-bar {
+  flex: 1;
+}
+
+.example-additional-selection {
+  opacity: 0.75;
+  font-size: 0.75em;
+}
+
+.form-container {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .content {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .form-content {
+    width: 100%;
+  }
+
+}
 
