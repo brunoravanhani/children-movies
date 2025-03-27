@@ -3,6 +3,7 @@ export interface Movie {
   name: string;
   description: string;
   image: string;
+  type: string;
   streams: Stream[]
 }
 

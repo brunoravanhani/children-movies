@@ -40,7 +40,7 @@ export class CartoonComponent implements OnInit {
     this.getData().subscribe({
       next: (response) => {
         this.moviesBase = response.data;
-        this.movies = this.moviesBase.sort(this.sortByName);
+        this.movies = this.moviesBase.filter(this.filterAnimated).sort(this.sortByName);
       },
       error: (error) => console.error('Error fetching data:', error),
     })
@@ -48,7 +48,7 @@ export class CartoonComponent implements OnInit {
 
   searchFilter() {
 
-    let filteredMovies = this.moviesBase.sort(this.sortByName);
+    let filteredMovies = this.moviesBase.filter(this.filterAnimated).sort(this.sortByName);
 
     if (this.search != '') {
       filteredMovies = filteredMovies
@@ -57,11 +57,14 @@ export class CartoonComponent implements OnInit {
 
     this.movies = filteredMovies;
 
-
   }
 
   getData(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
+  }
+
+  filterAnimated(movie: Movie) {
+    return movie.type === 'animated-movie';
   }
 
   sortByName(a: any, b: any) {
