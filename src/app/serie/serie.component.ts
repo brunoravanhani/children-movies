@@ -15,10 +15,12 @@ import { environment } from './../../environments/environment';
 import {CardListComponent} from '../../shared/card-list/card-list.component';
 import { Movie } from '../../shared/Models/Movie';
 
+import { BackButtonComponent } from '../../shared/back-button/back-button.component';
+
 @Component({
   selector: 'app-serie',
   standalone: true,
-  imports: [MatButtonModule,  MatIconModule, MatCheckboxModule, FormsModule, ReactiveFormsModule, MatInputModule, MatFormFieldModule, CardListComponent],
+  imports: [MatButtonModule,  MatIconModule, MatCheckboxModule, FormsModule, ReactiveFormsModule, MatInputModule, MatFormFieldModule, CardListComponent, BackButtonComponent],
   templateUrl: './serie.component.html',
   styleUrl: './serie.component.css'
 })
