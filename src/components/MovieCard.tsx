@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { type Movie } from '../types/Movie';
-
-import { FilmIcon, ListBulletIcon, UserGroupIcon } from '@heroicons/react/24/solid'
+import { FilmIcon, ListBulletIcon, UserGroupIcon } from '@heroicons/react/24/solid';
+import { StreamImage } from './StreamImage';
 
 export const MovieCard = ({ movie }: { movie: Movie}) => {
   return (
@@ -20,32 +20,17 @@ export const MovieCard = ({ movie }: { movie: Movie}) => {
           {movie.tags.map(tag =>
               (<span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">{tag}</span>))}
         </div>
-        <div className="mt-auto">
+        <div className="mt-auto flex justify-between">
           {movie.streams.length == 0 && <span className="text-gray-500 text-sm">Sem streaming disponível</span>}
-          {movie.streams.map(stream =>
-            (<a href={stream.link} className={colorStream(stream.name)} target="_blank">{stream.name}</a>))}
+          <div className="">
+            {movie.streams.map(stream =>
+              (<StreamImage streamName={stream.name}/>))}
+          </div>
+          {movie.streams.length != 0 &&
+            <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded justify-self-end">Assistir</button>}
         </div>
 
       </div>
     </div>
   );
-}
-
-function colorStream(streamName: string) {
-  if (streamName === 'Netflix')
-    return 'color-netflix';
-
-  if (streamName === 'Disney')
-    return 'color-disney';
-
-  if (streamName === 'Amazon Prime' || streamName === 'Prime Video')
-    return 'color-amazon';
-
-  if (streamName === 'Max')
-    return 'color-max';
-
-  if (streamName === 'Youtube')
-    return 'color-youtube';
-
-  return 'color-default';
 }
