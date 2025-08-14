@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import { type Movie } from '../types/Movie';
 import { getMovies } from '../services/moviesService';
 import { MovieCard } from './MovieCard';
+import { MoviesContext, useMovies } from '../context/MoviesContext';
 
 export const MovieList = () => {
+
+  const { addWatched, watched } = useMovies();
 
   const [movies, setMovies] = useState<Movie[]>([]);
 
@@ -15,14 +18,25 @@ export const MovieList = () => {
     }
 
     fetchMovies();
+    console.log(watched);
   }, []);
+
+  const watchMovie = (id : number) => {
+    const movie = movies.find(m => m.id === id);
+
+    if (!movie) return;
+
+    movie.watchedDate = new Date();
+
+    addWatched(movie);
+  }
 
   return (
     <>
       <h1 className="text-3xl font-bold mb-6 text-center">🎬 Lista de Filmes</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
-        {(movies || []).map(movie => (<MovieCard movie={movie} key={movie.id}></MovieCard>))}
+        {(movies || []).map(movie => (<MovieCard movie={movie} key={movie.id} watch={watchMovie}></MovieCard>))}
 
       </div>
       <ul>

@@ -3,7 +3,7 @@ import { type Movie } from '../types/Movie';
 import { FilmIcon, ListBulletIcon, UserGroupIcon } from '@heroicons/react/24/solid';
 import { StreamImage } from './StreamImage';
 
-export const MovieCard = ({ movie }: { movie: Movie}) => {
+export const MovieCard = ({ movie, watch }: { movie: Movie, watch : (id: number) => void}) => {
   return (
     <div key={movie.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col relative">
 
@@ -27,7 +27,10 @@ export const MovieCard = ({ movie }: { movie: Movie}) => {
               (<StreamImage streamName={stream.name}/>))}
           </div>
           {movie.streams.length != 0 &&
-            <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded justify-self-end">Assistir</button>}
+            <button
+              className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded justify-self-end"
+              onClick={() => watch(movie.id)}>Assistir
+            </button>}
         </div>
 
       </div>

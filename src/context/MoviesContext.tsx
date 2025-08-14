@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext, type ReactNode } from "react";
 import { type Movie } from '../types/Movie';
-// import { GetCart, SaveCart } from '../services/localstorageService';
+import { GetMovies, SaveMovies } from '../services/localStorageService';
 
 interface MovieContextType {
   watched: Movie[];
@@ -11,20 +11,24 @@ export const MoviesContext = createContext<MovieContextType | undefined>(undefin
 
 export const MoviesProvider = ({ children }: { children: ReactNode }) => {
 
-  const [watched, setWatched] = useState<Movie[]>([]/*() => {
-    // Get cart from localStorage on initialization
+  const [watched, setWatched] = useState<Movie[]>(() => {
     try {
-      return GetCart();
+      return GetMovies();
     } catch (error) {
-      console.error('Error loading cart from localStorage:', error);
-      return {};
+      console.error('Error loading movies from localStorage:', error);
+      return [];
     }
-  }*/);
+  });
 
   const addWatched = (movie: Movie) => {
     const newWatched = [...(watched || [])];
 
-    if (!newWatched.find(x => x.id == movie.id)) {
+    const existingMovie: Movie | undefined = newWatched.find(x => x.id == movie.id);
+
+    if (existingMovie) {
+      const index = newWatched.indexOf(existingMovie);
+      newWatched[index] = movie;
+    } else {
       newWatched.push(movie);
     }
 
@@ -33,6 +37,7 @@ export const MoviesProvider = ({ children }: { children: ReactNode }) => {
 
   const updateWatched = (newWatched: Movie[]) => {
     setWatched(newWatched);
+    SaveMovies(newWatched);
   }
 
   return (
