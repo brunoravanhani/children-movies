@@ -3,12 +3,17 @@ import { type Movie } from '../types/Movie';
 import { getMovies } from '../services/moviesService';
 import { MovieCard } from './MovieCard';
 import { MoviesContext, useMovies } from '../context/MoviesContext';
+import { StreamModal } from './StreamModal';
 
 export const MovieList = () => {
 
   const { addWatched, watched } = useMovies();
 
   const [movies, setMovies] = useState<Movie[]>([]);
+
+  const [currentMovie, setCurrentMovie] = useState<Movie | undefined>(undefined);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -18,7 +23,6 @@ export const MovieList = () => {
     }
 
     fetchMovies();
-    console.log(watched);
   }, []);
 
   const watchMovie = (id : number) => {
@@ -26,9 +30,31 @@ export const MovieList = () => {
 
     if (!movie) return;
 
-    movie.watchedDate = new Date();
+    if (movie.streams.length === 1) {
+      movie.watchedDate = new Date();
+      addWatched(movie);
+      window.open(movie.streams[0].link, '_blank');
+      return;
+    }
 
-    addWatched(movie);
+    setCurrentMovie(movie);
+    setIsModalOpen(true);
+
+  }
+
+  const onCloseModal = () => {
+    setIsModalOpen(false);
+  }
+
+  const onClickStream = () => {
+    setIsModalOpen(false);
+
+    if (!currentMovie)
+      return;
+
+    currentMovie.watchedDate = new Date();
+    addWatched(currentMovie);
+
   }
 
   return (
@@ -39,8 +65,8 @@ export const MovieList = () => {
         {(movies || []).map(movie => (<MovieCard movie={movie} key={movie.id} watch={watchMovie}></MovieCard>))}
 
       </div>
-      <ul>
-      </ul>
+
+      <StreamModal isOpen={isModalOpen} streams={currentMovie?.streams} onClose={onCloseModal} onClickStream={onClickStream}/>
     </>
   )
 }
