@@ -33,9 +33,23 @@ export const MovieCard = ({ movie, watch }: { movie: Movie, watch : (id: number)
               onClick={() => watch(movie.id) }>Assistir
             </button>}
         </div>
+        <div className="flex justify-end  m-1">
+          {!!movie.watchedDate && <span className="text-gray-500 text-xs">Assistido em: {formatDate(movie.watchedDate)}</span>}
+
+        </div>
 
       </div>
 
     </div>
   );
+}
+
+function formatDate(dateString: string) : string {
+  const date = new Date(dateString);
+
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+
+  return `${day}/${month}/${year}`;
 }

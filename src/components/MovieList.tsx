@@ -19,6 +19,13 @@ export const MovieList = () => {
     const fetchMovies = async () => {
       const data = await getMovies();
 
+      watched.forEach(m => {
+        const indexMovie = data.findIndex(x => x.id === m.id);
+        if (indexMovie >= 0) {
+          data[indexMovie].watchedDate = m.watchedDate;
+        }
+      });
+
       setMovies(data);
     }
 
@@ -31,7 +38,7 @@ export const MovieList = () => {
     if (!movie) return;
 
     if (movie.streams.length === 1) {
-      movie.watchedDate = new Date();
+      movie.watchedDate = new Date().toISOString();
       addWatched(movie);
       window.open(movie.streams[0].link, '_blank');
       return;
@@ -52,7 +59,7 @@ export const MovieList = () => {
     if (!currentMovie)
       return;
 
-    currentMovie.watchedDate = new Date();
+    currentMovie.watchedDate = new Date().toISOString();
     addWatched(currentMovie);
 
   }
