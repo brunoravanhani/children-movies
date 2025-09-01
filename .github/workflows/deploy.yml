@@ -1,0 +1,45 @@
+name: Deploy React App to S3
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+
+  AWS_REGION : us-east-1
+
+permissions:
+      id-token: write
+      contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: PROD
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Git clone the repository
+        uses: actions/checkout@v3
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v1.7.0
+        with:
+          role-to-assume: arn:aws:iam::087730237728:role/GitHubAction-AssumeRoleWithAction
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build React App
+        run: npm run build
+
+      - name: Deploy to S3
+        run: aws s3 sync dist/ s3://${{ vars.S3_REPOSITORY_NAME }} --delete
+
