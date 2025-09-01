@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
+import { ToggleButton } from './ToggleButton';
 
 type FiltersPropsType = {
   onSearch: (search: string) => void
@@ -9,7 +10,8 @@ type FiltersPropsType = {
 export interface FilterGenre {
   liveAction: boolean,
   animation: boolean,
-  serie: boolean
+  serie: boolean,
+  watched: boolean
 }
 
 
@@ -19,6 +21,7 @@ export const Filters = ({onSearch, onType} : FiltersPropsType) => {
   const [liveAction, setLiveAction] = useState(true);
   const [animation, setAnimation] = useState(true);
   const [serie, setSerie] = useState(true);
+  const [watched, setWatched] = useState(false);
 
   const onChangeSearch = (e: any) => {
     setSearch(e.target.value);
@@ -27,7 +30,7 @@ export const Filters = ({onSearch, onType} : FiltersPropsType) => {
 
   const onChangeAnimation = () => {
     const types = {
-      liveAction, animation: !animation, serie
+      liveAction, animation: !animation, serie, watched
     };
 
     setAnimation(!animation);
@@ -37,7 +40,7 @@ export const Filters = ({onSearch, onType} : FiltersPropsType) => {
 
   const onChangeSerie = () => {
     const types = {
-      liveAction, animation, serie: !serie
+      liveAction, animation, serie: !serie, watched
     };
 
     setSerie(!serie);
@@ -47,10 +50,20 @@ export const Filters = ({onSearch, onType} : FiltersPropsType) => {
 
   const onChangeLiveAction = () => {
     const types = {
-      liveAction: !liveAction, animation, serie
+      liveAction: !liveAction, animation, serie, watched
     };
 
     setLiveAction(!liveAction);
+
+    onType(types);
+  }
+
+  const onChangeWatched = () => {
+    const types = {
+      liveAction, animation, serie, watched: !watched
+    };
+
+    setWatched(!watched);
 
     onType(types);
   }
@@ -72,23 +85,15 @@ export const Filters = ({onSearch, onType} : FiltersPropsType) => {
         </div>
 
         <div className="py-5 px-1 flex justify-start gap-4 flex-wrap">
-          <label className="inline-flex items-center cursor-pointer">
-            <input type="checkbox" checked={animation} onChange={onChangeAnimation} className="sr-only peer"/>
-            <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
-            <span className="ms-3 text-xl font-medium text-gray-900 dark:text-gray-300">Filmes grandes</span>
-          </label>
 
-          <label className="inline-flex items-center cursor-pointer">
-            <input type="checkbox" checked={serie} onChange={onChangeSerie} className="sr-only peer"/>
-            <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
-            <span className="ms-3 text-xl font-medium text-gray-900 dark:text-gray-300">Filmes pequenos</span>
-          </label>
+          <ToggleButton checked={animation} onChange={onChangeAnimation} label="Filmes grandes"/>
 
-          <label className="inline-flex items-center cursor-pointer">
-            <input type="checkbox" checked={liveAction} onChange={onChangeLiveAction} className="sr-only peer"/>
-            <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
-            <span className="ms-3 text-xl font-medium text-gray-900 dark:text-gray-300">Live Action</span>
-          </label>
+          <ToggleButton checked={serie} onChange={onChangeSerie} label="Filmes pequenos"/>
+
+          <ToggleButton checked={liveAction} onChange={onChangeLiveAction} label="Live Action"/>
+
+          <ToggleButton checked={watched} onChange={onChangeWatched} label="Filmes assistidos"/>
+
         </div>
 
       </div>

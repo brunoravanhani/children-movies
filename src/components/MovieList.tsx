@@ -20,6 +20,8 @@ export const MovieList = () => {
 
   const [typeFilter, setTypeFilter] = useState<string[]>(['animated-movie', 'serie', 'live-action']);
 
+  const [watchFilter, setWatchFilter] = useState(false);
+
   useEffect(() => {
     const fetchMovies = async () => {
       const data = await getMovies();
@@ -38,14 +40,17 @@ export const MovieList = () => {
   }, []);
 
   const filteredMovies: Movie[] = useMemo(() => {
+
     return movies.filter((m) => {
       return (
         (searchFilter == '' && m.name.toLowerCase().includes(searchFilter))
         &&
         (typeFilter.includes(m.type))
+        &&
+        (!watchFilter || !!m.watchedDate)
       );
     });
-  }, [movies, searchFilter, typeFilter]);
+  }, [movies, searchFilter, typeFilter, watchFilter]);
 
   const watchMovie = (id : number) => {
     const movie = movies.find(m => m.id === id);
@@ -93,9 +98,9 @@ export const MovieList = () => {
     if (type.liveAction)
         types.push('live-action');
 
-    console.log(types);
-
     setTypeFilter(types);
+
+    setWatchFilter(type.watched);
   }
 
   return (
