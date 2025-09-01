@@ -1,0 +1,92 @@
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+#root {
+  padding: 20px;
+  width: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  cursor: pointer;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+    /* background-color: #f5f6f8; */
+  }
+}
+
+.color-netflix,
+.color-disney,
+.color-amazon,
+.color-max,
+.color-youtube {
+  transition: filter 0.3s;
+}
+
+.color-netflix:hover,
+.color-disney:hover,
+.color-amazon:hover,
+.color-max:hover,
+.color-youtube:hover {
+  filter: brightness(70%);
+}
+
+.color-netflix {
+  color: #E50914;
+  border: solid 1px #E50914;
+}
+
+.color-disney {
+  color: #01147C;
+  border: solid 1px #01147C;
+}
+
+.color-amazon {
+  color: #00a0dc;
+  border: solid 1px #00a0dc;
+}
+
+.color-max {
+  color: #9E86FF;
+  border: solid 1px #9E86FF;
+}
+
+.color-youtube {
+  color: #c4302b;
+  border: solid 1px #c4302b;
+}
+
+.color-default {
+  color: #303030;
+  border: solid 1px #303030;
+}
