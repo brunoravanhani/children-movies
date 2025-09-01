@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { type Movie } from '../types/Movie';
 import { getMovies } from '../services/moviesService';
 import { MovieCard } from './MovieCard';
-import { MoviesContext, useMovies } from '../context/MoviesContext';
+import { useMovies } from '../context/MoviesContext';
 import { StreamModal } from './StreamModal';
+import { Filters, type FilterGenre } from './Filters';
 
 export const MovieList = () => {
 
@@ -14,6 +15,10 @@ export const MovieList = () => {
   const [currentMovie, setCurrentMovie] = useState<Movie | undefined>(undefined);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [searchFilter, setSearchFilter] = useState("");
+
+  const [typeFilter, setTypeFilter] = useState<string[]>(['animated-movie', 'serie', 'live-action']);
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -31,6 +36,16 @@ export const MovieList = () => {
 
     fetchMovies();
   }, []);
+
+  const filteredMovies: Movie[] = useMemo(() => {
+    return movies.filter((m) => {
+      return (
+        (searchFilter == '' && m.name.toLowerCase().includes(searchFilter))
+        &&
+        (typeFilter.includes(m.type))
+      );
+    });
+  }, [movies, searchFilter, typeFilter]);
 
   const watchMovie = (id : number) => {
     const movie = movies.find(m => m.id === id);
@@ -64,12 +79,34 @@ export const MovieList = () => {
 
   }
 
+  const onSearch = (search: string) => {
+    setSearchFilter(search);
+  }
+
+  const onType = (type: FilterGenre) => {
+    const types = [];
+
+    if (type.animation)
+        types.push('animated-movie');
+    if (type.serie)
+        types.push('serie');
+    if (type.liveAction)
+        types.push('live-action');
+
+    console.log(types);
+
+    setTypeFilter(types);
+  }
+
   return (
     <>
       <h1 className="text-3xl font-bold mb-6 text-center">🎬 Lista de Filmes</h1>
+
+      <Filters onSearch={onSearch} onType={onType}/>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
-        {(movies || []).map(movie => (<MovieCard movie={movie} key={movie.id} watch={watchMovie}></MovieCard>))}
+        {(filteredMovies || []).map(movie => (<MovieCard movie={movie} key={movie.id} watch={watchMovie}></MovieCard>))}
 
       </div>
 
