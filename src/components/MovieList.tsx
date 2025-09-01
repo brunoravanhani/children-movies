@@ -100,7 +100,7 @@ export const MovieList = () => {
 
   return (
     <>
-      <h1 className="text-3xl font-bold mb-6 text-center">🎬 Lista de Filmes</h1>
+      <h1 className="text-3xl lg:text-4xl font-bold mt-6 mb-6 text-center">🎬 Lista de Filmes</h1>
 
       <Filters onSearch={onSearch} onType={onType}/>
 
