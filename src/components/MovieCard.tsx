@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { type Movie } from '../types/Movie';
 import { FilmIcon, ListBulletIcon, UserGroupIcon } from '@heroicons/react/24/solid';
 import { StreamImage } from './StreamImage';

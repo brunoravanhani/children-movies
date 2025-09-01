@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css';
 import { MovieList } from './components/MovieList';
 import { MoviesProvider } from './context/MoviesContext';

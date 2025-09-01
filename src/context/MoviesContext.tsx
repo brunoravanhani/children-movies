@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, type ReactNode } from "react";
+import { createContext, useState, useContext, type ReactNode } from "react";
 import { type Movie } from '../types/Movie';
 import { GetMovies, SaveMovies } from '../services/localStorageService';
 

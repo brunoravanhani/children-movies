@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import { useState } from "react";
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 
 type FiltersPropsType = {

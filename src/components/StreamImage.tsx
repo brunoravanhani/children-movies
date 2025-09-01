@@ -1,5 +1,3 @@
-import React from "react";
-
 import netflix from '../assets/netflix.svg';
 import amazon from '../assets/amazon-prime-video.svg';
 import hbo from '../assets/hbo-max.svg';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { type Stream } from '../types/Movie';
 import { XMarkIcon } from '@heroicons/react/24/solid';
 

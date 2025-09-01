@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { type Movie } from '../types/Movie';
 import { getMovies } from '../services/moviesService';
 import { MovieCard } from './MovieCard';
