@@ -43,7 +43,7 @@ export const MovieList = () => {
 
     return movies.filter((m) => {
       return (
-        (searchFilter == '' && m.name.toLowerCase().includes(searchFilter))
+        (searchFilter == '' || m.name.toLowerCase().includes(searchFilter))
         &&
         (typeFilter.includes(m.type))
         &&
