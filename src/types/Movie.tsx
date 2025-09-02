@@ -6,7 +6,8 @@ export interface Movie {
   type: 'animated-movie' | 'serie' | 'live-action',
   streams: Stream[],
   tags: string[],
-  watchedDate: string | null
+  watchedDate: string | null,
+  year: number | null
 }
 
 export interface Stream {

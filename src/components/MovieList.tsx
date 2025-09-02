@@ -41,7 +41,7 @@ export const MovieList = () => {
 
   const filteredMovies: Movie[] = useMemo(() => {
 
-    return movies.filter((m) => {
+    return movies.sort(sortMovies).filter((m) => {
       return (
         (searchFilter == '' && m.name.toLowerCase().includes(searchFilter))
         &&
@@ -118,4 +118,9 @@ export const MovieList = () => {
       <StreamModal isOpen={isModalOpen} streams={currentMovie?.streams} onClose={onCloseModal} onClickStream={onClickStream}/>
     </>
   )
+}
+
+const sortMovies = (a: Movie, b: Movie) : number => {
+
+  return (b.year ?? -Infinity) - (a.year ?? -Infinity);
 }
