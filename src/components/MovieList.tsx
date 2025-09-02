@@ -41,7 +41,7 @@ export const MovieList = () => {
 
   const filteredMovies: Movie[] = useMemo(() => {
 
-    return movies.sort(sortMovies).filter((m) => {
+    return movies.filter((m) => {
       return (
         (searchFilter == '' && m.name.toLowerCase().includes(searchFilter))
         &&
@@ -49,7 +49,7 @@ export const MovieList = () => {
         &&
         (!watchFilter || !!m.watchedDate)
       );
-    });
+    }).sort(sortMovies);
   }, [movies, searchFilter, typeFilter, watchFilter]);
 
   const watchMovie = (id : number) => {
