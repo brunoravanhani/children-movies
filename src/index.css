@@ -84,3 +84,7 @@ button {
   color: #303030;
   border: solid 1px #303030;
 }
+
+.transform-scale-2 {
+  transform: scale(2);
+}

@@ -5,6 +5,7 @@ import { MovieCard } from './MovieCard';
 import { useMovies } from '../context/MoviesContext';
 import { StreamModal } from './StreamModal';
 import { Filters, type FilterGenre } from './Filters';
+import { Spinner } from './Spinner';
 
 export const MovieList = () => {
 
@@ -22,9 +23,13 @@ export const MovieList = () => {
 
   const [watchFilter, setWatchFilter] = useState(false);
 
+  const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
     const fetchMovies = async () => {
       const data = await getMovies();
+
+      setIsLoaded(true);
 
       watched.forEach(m => {
         const indexMovie = data.findIndex(x => x.id === m.id);
@@ -109,11 +114,17 @@ export const MovieList = () => {
 
       <Filters onSearch={onSearch} onType={onType}/>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {(!isLoaded && !filteredMovies.length) && <Spinner />}
 
-        {(filteredMovies || []).map(movie => (<MovieCard movie={movie} key={movie.id} watch={watchMovie}></MovieCard>))}
+      {
+        (!!filteredMovies.length)
+        &&
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
-      </div>
+          {(filteredMovies || []).map(movie => (<MovieCard movie={movie} key={movie.id} watch={watchMovie}></MovieCard>))}
+
+        </div>
+      }
 
       <StreamModal isOpen={isModalOpen} streams={currentMovie?.streams} onClose={onCloseModal} onClickStream={onClickStream}/>
     </>
