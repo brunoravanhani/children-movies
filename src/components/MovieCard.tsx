@@ -2,7 +2,7 @@ import { type Movie } from '../types/Movie';
 import { FilmIcon, ListBulletIcon, UserGroupIcon } from '@heroicons/react/24/solid';
 import { StreamImage } from './StreamImage';
 
-export const MovieCard = ({ movie, watch }: { movie: Movie, watch : (id: number) => void}) => {
+export const MovieCard = ({ movie, watch }: { movie: Movie, watch : (id: string) => void}) => {
 
   return (
     <div key={movie.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col relative">
