@@ -6,6 +6,8 @@ import { useMovies } from '../context/MoviesContext';
 import { StreamModal } from './StreamModal';
 import { Filters, type FilterGenre } from './Filters';
 import { Spinner } from './Spinner';
+import { UserCircleIcon } from '@heroicons/react/24/solid';
+import { getAccessCodeUrl } from '../shared/googleApiHelper';
 
 export const MovieList = () => {
 
@@ -24,6 +26,8 @@ export const MovieList = () => {
   const [watchFilter, setWatchFilter] = useState(false);
 
   const [isLoaded, setIsLoaded] = useState(false);
+
+  const accessCodeUrl = getAccessCodeUrl(import.meta.env.VITE_APP_URL, import.meta.env.VITE_CLIENT_ID);
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -110,6 +114,10 @@ export const MovieList = () => {
 
   return (
     <>
+      <div>
+        <a href={accessCodeUrl}><UserCircleIcon className="size-8 inline"/> Login com Google</a>
+      </div>
+
       <h1 className="text-3xl lg:text-4xl font-bold mt-6 mb-6 text-center">🎬 Lista de Filmes</h1>
 
       <Filters onSearch={onSearch} onType={onType}/>
