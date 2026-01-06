@@ -36,7 +36,7 @@ export const MovieList = () => {
       setIsLoaded(true);
 
       watched.forEach(m => {
-        const indexMovie = data.findIndex(x => x.id === m.id);
+        const indexMovie = data.findIndex(x => x.id == m.id);
         if (indexMovie >= 0) {
           data[indexMovie].watchedDate = m.watchedDate;
         }
@@ -61,7 +61,7 @@ export const MovieList = () => {
     }).sort(sortMovies);
   }, [movies, searchFilter, typeFilter, watchFilter]);
 
-  const watchMovie = (id : number) => {
+  const watchMovie = (id : string) => {
     const movie = movies.find(m => m.id === id);
 
     if (!movie) return;
